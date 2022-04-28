@@ -66,14 +66,6 @@ final class RxViewController: UIViewController {
     }
     
     private func bind() {
-        //        Publishers.CombineLatest(
-        //            idTextField.textPublisher.replaceNil(with: ""),
-        //            pwTextField.textPublisher.replaceNil(with: "")
-        //        ).map { a, b in
-        //            a.count > 5 && b.count > 5
-        //        }.assign(to: \.isEnabled, on: button)
-        //            .store(in: &cancellables)
-        
         Observable.combineLatest(
             idTextField.rx.text.orEmpty,
             pwTextField.rx.text.orEmpty
@@ -86,10 +78,6 @@ final class RxViewController: UIViewController {
             .bind { _ in
                 print("button tapped.")
             }.disposed(by: disposeBag)
-        
-        
-        //            .bind(to: button.rx.isEnabled)
-        //            .disposed(by: disposeBag)
     }
     
 }
