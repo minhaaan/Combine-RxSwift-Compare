@@ -11,7 +11,7 @@ import Then
 import Combine
 import CombineCocoa
 
-final class ViewController: UIViewController {
+final class CombineViewController: UIViewController {
     
     private let idTextField = UITextField().then {
         $0.layer.borderWidth = 1
